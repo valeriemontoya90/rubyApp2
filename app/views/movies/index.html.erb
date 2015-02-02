@@ -1,7 +1,7 @@
 <h1>Movies#index</h1>
 <p>Find me in app/views/movies/index.html.erb</p>
 
-<%= form_tag('/movies/search', method: "get") do %>
+<%= form_tag('/search', method: "get") do %>
   <p><%= text_field_tag(:q) %></p>
   <div><%= submit_tag('search') %></div>
 <% end %>

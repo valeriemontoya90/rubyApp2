@@ -3,9 +3,8 @@ class MoviesController < ApplicationController
   end
 
   def search
-    #@movies = Movie.all
     @movie = Movie.search(params[:q])
-    #@configuration = Tmdb::Configuration.new
+    @configuration = Tmdb::Configuration.new
   end
 
   def show
