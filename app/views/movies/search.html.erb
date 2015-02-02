@@ -1,0 +1,30 @@
+<% if user_signed_in? %>
+User id: <%= current_user.id %>
+
+<h1>Listing Movie</h1>
+  
+<table>
+  <thead>
+    <tr>
+      <th>image</th>
+      <th>title</th>
+      <th>Movie id</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @movie.each do |mov| %>
+      <tr>
+        <td><%= image_tag("#{@configuration.base_url}w154#{mov.poster_path}") if mov.poster_path %></td>
+        <td><%= mov.title %></td>
+        <td><%= mov.id %></td>
+        <td>
+          <%= link_to "Add to my list", new_user_movie_path(:user_id => current_user.id, :movie_id => mov.id) %> </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
+
+<% end %>
