@@ -11,7 +11,6 @@ class Movie < ActiveRecord::Base
 		@movie.fetch # makes request
 	end
 
-	
 	# def self.show(query)
 	# 	@movie = Tmdb::Movie.detail(params[:id])
 	#   	@images = Tmdb::Movie.images(query)

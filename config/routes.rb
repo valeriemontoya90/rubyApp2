@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :user_movies
+
   devise_for :users
   resources :movies
 
