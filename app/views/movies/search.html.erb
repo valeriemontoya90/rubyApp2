@@ -19,6 +19,8 @@ User id: <%= current_user.id %>
         <td><%= image_tag("#{@configuration.base_url}w154#{mov['poster_path']}") if mov["poster_path"] %></td>
         <td><%= mov["title"] %></td>
         <td><%= mov["id"] %></td>
+        <td>
+          <%= link_to "Add to my list", new_user_movie_path(:user_id => current_user.id, :movie_id => mov["id"]) %> </td>
       </tr>
     <% end %>
   </tbody>

@@ -1,4 +1,5 @@
 class Movie < ActiveRecord::Base
+	has_many :user_movie
 
 	def index
 		@movie = Tmdb::Movie.find(params[:query])
@@ -10,12 +11,4 @@ class Movie < ActiveRecord::Base
 		@movie.query(query) # the query to search against
 		@movie.fetch # makes request
 	end
-
-	# def self.show(query)
-	# 	@movie = Tmdb::Movie.detail(params[:id])
-	#   	@images = Tmdb::Movie.images(query)
-	#   	@cast = Tmdb::Movie.casts(params[:id])
-	#   	@trailers = Tmdb::Movie.trailers(params[:id])
-	#   	@similar_movies = Tmdb::Movie.similar_movies(params[:id])
-	# end
 end
